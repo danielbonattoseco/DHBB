@@ -2,6 +2,7 @@
 # Gerador de Verbetes DHBB 0.1
 
 Este software é produzido e mantido dentro do âmbito do projeto "Programação aplicada ao DHBB" pelo CPDOC/FGV, com o objetivo de fornecer uma solução automatizada de geração dos verbetes biográficos do Dicionário Histórico Biográfico Brasileiro (DHBB),  gestão e manutenção de seus metadados.
+Atualmente encontra-se em *pré-release*, o que significa que novas funcionalidades e correções poderão ocorrer com frequencia. Se identificar algum comportamento inesperado, notifique na guia -[Issues](https://github.com/danielbonattoseco/DHBB/issues).
 
 ## ⚙️ Requisitos
 - Windows 10 ou superior;
