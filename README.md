@@ -9,13 +9,13 @@ Este software é produzido e mantido dentro do âmbito do projeto "Programação
 
 ## 🖥️ Rodando localmente
 
-Clone o projeto
+Clone o projeto:
 
 ```bash
 git clone https://github.com/danielbonattoseco/DHBB
 ```
 
-Entre no diretório do projeto
+Entre no diretório do projeto:
 
 
 ```bash
@@ -38,7 +38,7 @@ start dist\main.exe
 
 Esta opção rodará o software diretamente no seu ambiente Python, e instalará possíveis dependências no seu sistema.
 
-**1 -** Instale as dependências
+**1 -** Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
@@ -64,7 +64,7 @@ python -m venv virtual_env
 ```bash
 virtual_env\Scripts\activate
 ```
-**3 -** Instale as dependências
+**3 -** Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
