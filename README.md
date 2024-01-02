@@ -13,7 +13,7 @@ Clone o projeto
 # EDITAR
 
 ```bash
-git clone https://link-para-o-projeto
+git clone https://github.com/danielbonattoseco/DHBB
 ```
 
 Entre no diretório do projeto
@@ -76,10 +76,8 @@ pip install -r requirements.txt
 python main.py
 ```
 ## Autores
-
-- [@danielbonattoseco](https://www.linkedin.com/in/danielbonattoseco/)
-
-
+Orientador: - [Profa. Dra. Jaqueline Porto Zulini](http://lattes.cnpq.br/4672784311890510)
+Orientando/Desenvolvedor: - [Daniel Bonatto Seco](http://lattes.cnpq.br/8325397475123191)
 
 ## Licença
 
