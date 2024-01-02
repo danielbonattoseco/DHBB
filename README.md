@@ -10,7 +10,6 @@ Este software é produzido e mantido dentro do âmbito do projeto "Programação
 ## 🖥️ Rodando localmente
 
 Clone o projeto
-# EDITAR
 
 ```bash
 git clone https://github.com/danielbonattoseco/DHBB
