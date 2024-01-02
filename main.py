@@ -9,12 +9,10 @@ Software sob MIT License (https://opensource.org/license/mit/)
 ### IMPORTAÇÃO DE BIBLIOTECAS
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox
-from tkinter import filedialog
+from tkinter.font import Font
 from ttkwidgets.autocomplete import AutocompleteCombobox
 from PIL import ImageTk, Image
-from tkcalendar import DateEntry
-from datetime import date, datetime
+from datetime import datetime
 import locale
 import ctypes
 import json
@@ -22,7 +20,6 @@ import requests
 import pickle
 import webbrowser
 import os
-from tkinter.font import Font
 
 myappid = 'fgv.geradordeverbetes.0.1' #https://semver.org/
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -668,17 +665,17 @@ class Date():
         
         if dia is not None:
             if not (1 <= dia <= 31):
-                messagebox.showerror("Erro","O dia deve estar entre 1 e 31")
+                tk.messagebox.showerror("Erro","O dia deve estar entre 1 e 31")
             else:
                 dia_valido = True
         if mes is not None:
             if not (1 <= mes <= 12):
-                messagebox.showerror("Erro","O mês deve estar entre 1 e 12")
+                tk.messagebox.showerror("Erro","O mês deve estar entre 1 e 12")
             else:
                 mes_valido = True
         if ano is not None and len(str(ano)) >= 4:
             if not (1900 <= ano <= datetime.now().year):
-                messagebox.showerror("Erro",f"O ano deve estar entre 1900 e {datetime.now().year}")
+                tk.messagebox.showerror("Erro",f"O ano deve estar entre 1900 e {datetime.now().year}")
             else:
                 ano_valido = True
 
@@ -2913,12 +2910,12 @@ def SalvarArquivo():
 
         with open('./Verbetes/%s/%s.pickle'%(nome_arquivo,nome_arquivo), 'wb') as handle:
             pickle.dump(dados_verbetado, handle, protocol=pickle.HIGHEST_PROTOCOL)
-        messagebox.showinfo(title='Salvar Arquivo', 
+        tk.messagebox.showinfo(title='Salvar Arquivo', 
                             message='Arquivo salvo com sucesso em %s\Verbetes\%s\%s.pickle.'%(os.path.abspath(os.curdir),
                                                                                        nome_arquivo,
                                                                                        nome_arquivo))
     else:
-        messagebox.showerror(title='Salvar Arquivo', 
+        tk.messagebox.showerror(title='Salvar Arquivo', 
                              message='O nome civil do verbetado é obrigatório.')
 
 
@@ -2939,7 +2936,7 @@ def ExportarVerbete():
 
     with open('./Verbetes/%s/%s.txt'%(nome_arquivo,nome_arquivo), 'w+') as handle:
         handle.write(string_verbete.get())
-    messagebox.showinfo(title='Exportar Verbete', 
+    tk.messagebox.showinfo(title='Exportar Verbete', 
                         message='Verbete exportado com sucesso em %s\Verbetes\%s\%s.txt.'%(os.path.abspath(os.curdir),
                                                                                            nome_arquivo,
                                                                                            nome_arquivo))
@@ -2961,7 +2958,7 @@ def ExportarJSON():
 
     with open('./Verbetes/%s/%s.json'%(nome_arquivo,nome_arquivo), 'w+', encoding='utf-8') as handle:
         handle.write(dados_verbetado.toJSON())
-    messagebox.showinfo(title='Exportar Verbete', 
+    tk.messagebox.showinfo(title='Exportar Verbete', 
                         message='Arquivo salvo com sucesso em %s\Verbetes\%s\%s.json.'%(os.path.abspath(os.curdir),
                                                                                    nome_arquivo,
                                                                                    nome_arquivo))
@@ -2972,7 +2969,7 @@ def _on_mousewheel(event):
     
 def AboutButton():
     """Abre o GitHub do projeto."""
-    webbrowser.open("https://github.com/cpdoc/dhbb")
+    webbrowser.open("https://github.com/danielbonattoseco/DHBB")
     
 #%% CONSTRUÇÃO UI
 
@@ -3764,5 +3761,6 @@ if __name__ == "__main__":
     root.bind('<<ComboboxSelected>>', construtor_verbete)
     root.bind("<Enter>", construtor_verbete)
     root.bind('<Leave>', construtor_verbete)
+    
 #%% EXECUTAR A APLICAÇÀO
     root.mainloop()
