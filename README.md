@@ -19,7 +19,7 @@ Entre no diretório do projeto:
 
 
 ```bash
-cd **seu diretório de clone do projeto**
+cd DHBB
 ```
 
 Para executar a aplicação localmente em sua máquina, siga uma das seguintes abordagens:
