@@ -3,7 +3,7 @@
 Este software foi gerado dentro do âmbito do projeto "Programação aplicada ao DHBB" pelo CPDOC/FGV.
 Orientador: Profa. Dra. Jaqueline Porto Zulini (http://lattes.cnpq.br/4672784311890510)
 Orientando/Desenvolvedor: Daniel Bonatto Seco (http://lattes.cnpq.br/8325397475123191)
-Software sob MIT License (https://opensource.org/license/mit/)
+Software sob MIT License. (https://opensource.org/license/mit/)
 """
 
 ### IMPORTAÇÃO DE BIBLIOTECAS
