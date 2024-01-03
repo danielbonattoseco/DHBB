@@ -933,7 +933,7 @@ def construtor_verbete(event):
     # REDAÇÃO PARAGRAFO DE FALECIMENTO    
     
     if dados_verbetado.data_fal or dados_verbetado.mun_fal:            
-        paragrafo_falecimento = " Faleceu em" \
+        paragrafo_falecimento = "Faleceu em" \
         + (' %s de'%(data_fal.dia.get()) if data_fal.dia.get() else '') \
         + (' %s de'%(datetime.strptime(data_fal.mes.get(), "%m").strftime("%B")) if data_fal.mes.get() else '') \
         + (' %s'%(data_fal.ano.get()) if data_fal.ano.get() else '') \
@@ -953,7 +953,7 @@ def construtor_verbete(event):
     paragrafo_metadados = ''
     
     if dados_verbetado.nome_autor_verbete:
-        paragrafo_metadados += f"\n\n*{dados_verbetado.nome_autor_verbete} (colaboração)*"
+        paragrafo_metadados += f"\n\n*{dados_verbetado.nome_autor_verbete} (colaboração)"
     
     if dados_verbetado.fontes:
         paragrafo_metadados += "\n\nFONTES:"
@@ -2673,7 +2673,6 @@ def func_genero(*args):
 
     for i in range(0,len(entry_parent_pol[1])):
         entry_parent_pol[1][i].configure(completevalues=onto_parentela_fem if input_genero.get() == 'Feminino' else onto_parentela_masc)
-        print(entry_parent_pol[1][i].get())
     entry_parent_pol[1][-1].set('')
             
 def get_municipios(*args):
