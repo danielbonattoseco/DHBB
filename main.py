@@ -2964,7 +2964,31 @@ def ExportarJSON():
     
 def _on_mousewheel(event):
     """Permite a rolagem da página através do scrool do mouse."""
-    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+    
+    parent = event.widget.winfo_parent()
+    widget = event.widget._nametowidget(parent)
+
+    while True:
+        if widget.winfo_parent():
+            temp_parent = widget.winfo_parent()
+            temp_widget = widget._nametowidget(temp_parent)
+            if temp_widget.winfo_parent():
+                temp_parent = temp_widget.winfo_parent()
+                temp_widget = temp_widget._nametowidget(temp_parent)
+                if temp_widget.winfo_parent():
+                    parent = widget.winfo_parent()
+                    widget = widget._nametowidget(parent)
+                else:
+                    break
+            else:
+                break
+        else:
+            break
+        
+    try:
+        widget.yview_scroll(int(-1*(event.delta/120)), "units")
+    except:
+        pass
     
 def AboutButton():
     """Abre o GitHub do projeto."""
