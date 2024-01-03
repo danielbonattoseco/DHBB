@@ -3095,6 +3095,14 @@ if __name__ == "__main__":
                           highlightbackground="silver",
                           highlightthickness=1)
 
+    previa_canvas = tk.Canvas(frame_previa)
+
+    previa_scrollbar = ttk.Scrollbar(frame_previa,
+                                     orient="vertical",
+                                     command=previa_canvas.yview)
+    previa_scrollbar.pack(side=tk.RIGHT,
+                          fill=tk.Y)
+
     frame_previa.pack_propagate(False)
     frame_previa.pack()
 
@@ -3105,20 +3113,17 @@ if __name__ == "__main__":
     titulo_previa_texto.pack()
 
     text_frame_previa = tk.Text(frame_previa,
-                        wrap='word')
+                        wrap='word',
+                        state=tk.NORMAL)
 
     text_frame_previa.pack(side=tk.LEFT,
-                           fill=tk.X,
-                           expand=True)
+                            fill=tk.X,
+                            expand=True)
 
     text_frame_previa.tag_config('warning', foreground="red")
 
-    sb_previa = tk.Scrollbar(frame_previa)
-    sb_previa.pack(side=tk.RIGHT,
-                   fill=tk.Y)
-
-    text_frame_previa.config(yscrollcommand=sb_previa.set)
-    sb_previa.config(command=text_frame_previa.yview)
+    text_frame_previa.config(yscrollcommand=previa_scrollbar.set)
+    previa_scrollbar.config(command=text_frame_previa.yview)
 
     #STRING DE PREVIEW DO VERBETE, ATUALIZADA À MEDIDA QUE O USUARIO INSERE DADOS
     string_verbete = tk.StringVar(root)
@@ -3777,9 +3782,7 @@ if __name__ == "__main__":
                                 input_uf_fal, input_uf_nasc, tipo_verbete, input_nome_autor_verbete)
 
 #%% BIND INTERAÇÒES COM A UI PARA CONSTRUÇÃO DO VERBETE
-    root.bind("<Key>", construtor_verbete)
-    root.bind("<Button-1>", construtor_verbete)
-    root.bind("<ButtonRelease-1>", construtor_verbete)
+    root.bind("<KeyRelease>", construtor_verbete)
     root.bind("<Return>", construtor_verbete)
     root.bind('<<ComboboxSelected>>', construtor_verbete)
     root.bind("<Enter>", construtor_verbete)
