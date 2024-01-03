@@ -3065,11 +3065,11 @@ if __name__ == "__main__":
     scrollbar = ttk.Scrollbar(frame_dados,
                               orient="vertical",
                               command=canvas.yview)
-    scrollbar.pack(side="right", fill="y")
+    scrollbar.pack(side=tk.RIGHT,
+                   fill=tk.Y)
 
     frame_dados_scroll = ttk.Frame(canvas)
     frame_dados_scroll.bind_all("<MouseWheel>", _on_mousewheel)
-    frame_dados_scroll.bind("<MouseWheel>", _on_mousewheel)
 
     frame_dados_scroll.bind(
         "<Configure>",
