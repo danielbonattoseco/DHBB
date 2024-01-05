@@ -60,7 +60,7 @@ Esta é uma opção de instalação mais limpa, que instala as dependências dir
 python -m venv virtual_env
 ```
 
-**2. -** Ative o ambiente virtual criado:
+**2 -** Ative o ambiente virtual criado:
 
 ```bash
 virtual_env\Scripts\activate
