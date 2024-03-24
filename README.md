@@ -87,4 +87,4 @@ Orientando/Desenvolvedor: [Daniel Bonatto Seco](http://lattes.cnpq.br/8325397475
 
 
 
-![Logo](<img src="https://cpdoc.fgv.br/sites/default/files/inline-images/logo-pt-br.png" width="100" height="50">)
+![Logo](https://cpdoc.fgv.br/sites/default/files/inline-images/logo-pt-br.png)
